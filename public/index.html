@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="proview" >
+<head>
+  <meta charset="utf-8">
+  <title>Exmont - Exchange Monitor</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+<body ng-controller="MainCtrl">   
+  <div class="heading">Exmont - Exchange Monitor: live comparison of BTC/USD bid & ask prices</div>
+  <div class="heading">Price Index: {{data.idx}}</div>                              
+  <table style="width: 100%; margin-bottom: 10px; border: 1px solid black;">
+    <thead>
+    <tr>
+       <th>Market</th>
+       <th>Bid</th>
+       <th>Ask</th>    
+       <th>Buy (MM) %</th>
+       <th><b>Buy MKT %</b></th>
+       <th>Sell (MM) %</th>
+       <th><b>Sell MKT %</b></th>
+       <th>Updated, UTC</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-ng-repeat="market in data.markets">
+        <td>{{ market.name }} {{ round10(market.days, 1) }}</td>
+        <td>{{ round10(market.bid, 2) }}</td>
+        <td>{{ round10(market.ask, 2) }}</td>
+        <td ng-class="getClass(market.buy_make)">{{ round10(market.buy_make, 2) }}%</td>
+        <td ng-class="getClass(market.buy_take)"><b>{{ round10(market.buy_take, 2) }}%</b></td>
+        <td ng-class="getClass(market.sell_make)">{{ round10(market.sell_make, 2) }}%</td>
+        <td ng-class="getClass(market.sell_take)"><b>{{ round10(market.sell_take, 2) }}%</b></td>
+        <td>{{ market.updated.toString().substr(11, 8) }}</td>    
+    </tr>
+    </tbody>
+  </table>
+  <div class="footer">All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees.</div>
+  <div class="footer">This application is written using Node.js and AngularJS.</div>
+  <div class="footer">Published at <a href='http://exmont-lbror.rhcloud.com'>http://exmont-lbror.rhcloud.com</a>.</div>
+  <div class="footer">Author: Maksim Shevchenko <a href='http://github.com/electromax'>Github</a></div>
+</body>
+</html>
