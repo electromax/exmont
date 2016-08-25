@@ -6,7 +6,7 @@ It is a known fact that the Bitcoin prices differ from exchange to exchange. The
 
 This project's idea is to provide a live tool to compare exchanges' bid/ask (=buy/sell) prices to the same number which indicates a "fair" Bitcoin price for the moment. This creates a system of coordinates to the comparison, and clearly divides "cheap" markets from "expensive" ones.
 
-Obviously, the "fairness" concept is a subjective one. Usually, some kind of weighted average is used to generate a Bitcoin index, that is the way we go too.
+Obviously, the "fairness" concept is a subjective one. Exmont uses [a weighted average of exchange prices](https://kaiko.com/) to get the Bitcoin price index which all prices are compared to.
 
 ## Demo
 http://exmont-lbror.rhcloud.com/
@@ -14,13 +14,12 @@ http://exmont-lbror.rhcloud.com/
 ## Supported exchanges
 * http://bitfinex.com/
 * http://btc-e.com/
-* http://bitmex.com/
+* http://okcoin.com/
 * http://quadrigacx.com/
 
 ## Planned exchanges to support:
 * http://bitstamp.com/
 * http://itbit.com/
 * http://kraken.com/
-* http://okcoin.com/
 * http://coinbase.com/
 
