@@ -38,10 +38,10 @@ OKC.prototype.update = function() {
             var data = JSON.parse(str);
             self.bid = parseFloat(data.ticker.buy);
             self.ask = parseFloat(data.ticker.sell);
-            self.buy_make = ((self.bid + 0.01) * 1.005 - self.idx) / self.idx * 100;
-            self.sell_make = ((self.ask - 0.01) / 1.005 - self.idx) / self.idx * 100;
-            self.buy_take = (self.ask * 1.005 - self.idx) / self.idx * 100;
-            self.sell_take = (self.bid / 1.005 - self.idx) / self.idx * 100;
+            self.buy_make = ((self.bid + 0.01) - self.idx) / self.idx * 100;
+            self.sell_make = ((self.ask - 0.01) - self.idx) / self.idx * 100;
+            self.buy_take = (self.ask * 1.002 - self.idx) / self.idx * 100;
+            self.sell_take = (self.bid / 1.002 - self.idx) / self.idx * 100;
             self.updated = new Date();
         });
     }
