@@ -15,11 +15,11 @@ http://exmont-lbror.rhcloud.com/
 * http://bitfinex.com/
 * http://btc-e.com/
 * http://okcoin.com/
+* http://itbit.com/
 * http://quadrigacx.com/
 
 ## Planned exchanges to support:
 * http://bitstamp.com/
-* http://itbit.com/
 * http://kraken.com/
 * http://coinbase.com/
 
