@@ -7,6 +7,7 @@ var btce = require('./btce');
 var quadriga = require('./quadriga');
 var finex = require('./finex');
 var okc = require('./okc');
+var itbit = require('./itbit');
 
 /**
  *  Define the sample application.
@@ -110,7 +111,7 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [self.finex, self.btce, self.okc, self.quadriga],
+                markets: [self.finex, self.btce, self.okc, self.itbit, self.quadriga],
                 idx: self.kaiko.idx
             }));
         };
@@ -162,7 +163,8 @@ var SampleApp = function() {
         self.quadriga = new quadriga();
         self.finex = new finex();
         self.okc = new okc();
-        self.kaiko = new kaiko([self.btce, self.quadriga, self.finex, self.okc]);
+        self.itbit = new itbit();
+        self.kaiko = new kaiko([self.btce, self.quadriga, self.finex, self.itbit, self.okc]);
     };
 
 }; /*  Sample Application.  */
