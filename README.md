@@ -18,6 +18,7 @@ http://exmont-lbror.rhcloud.com/
 * http://itbit.com/
 * http://bitstamp.com/
 * http://quadrigacx.com/
+* http://quoine.com/
 
 ## Planned exchanges to support:
 * http://kraken.com/

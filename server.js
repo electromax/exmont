@@ -9,6 +9,7 @@ var finex = require('./finex');
 var okc = require('./okc');
 var itbit = require('./itbit');
 var stamp = require('./stamp');
+var quoine = require('./quoine');
 
 /**
  *  Define the sample application.
@@ -112,7 +113,7 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [self.finex, self.btce, self.okc, self.itbit, self.stamp, self.quadriga],
+                markets: [self.finex, self.btce, self.okc, self.itbit, self.stamp, self.quadriga, self.quoine],
                 idx: self.kaiko.idx
             }));
         };
@@ -165,8 +166,9 @@ var SampleApp = function() {
         self.finex = new finex();
         self.okc = new okc();
         self.itbit = new itbit();
-		self.stamp = new stamp();
-        self.kaiko = new kaiko([self.btce, self.quadriga, self.finex, self.itbit, self.stamp, self.okc]);
+        self.stamp = new stamp();
+        self.quoine = new quoine();
+        self.kaiko = new kaiko([self.btce, self.quadriga, self.finex, self.itbit, self.stamp, self.okc, self.quoine]);
     };
 
 }; /*  Sample Application.  */
