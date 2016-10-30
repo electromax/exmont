@@ -16,10 +16,10 @@
        <th>Market</th>
        <th>Bid</th>
        <th>Ask</th>    
-       <th>Buy (MM)</th>
-       <th><b>Buy MKT</b></th>
-       <th>Sell (MM)</th>
-       <th><b>Sell MKT</b></th>
+       <th>Buy MM*</th>
+       <th><b>Buy</b></th>
+       <th>Sell MM*</th>
+       <th><b>Sell</b></th>
        <th>Updated, UTC</th>
     </tr>
     </thead>
@@ -36,7 +36,17 @@
     </tr>
     </tbody>
   </table>
+  <div class="strategy" ng-show="data.margin">
+     Possible artbitrage strategy: Buy "{{ data.buy_market.name }}" at <b class="green">{{ round10(data.buy_market.ask, 2) }}</b>, 
+     Sell "{{ data.sell_market.name }}" at <b class="red">{{ round10(data.sell_market.bid, 2) }}</b>,
+     Margin: <b>{{ round10(data.margin, 2) }}%</b>.                                   
+  </div>
+  <div class="strategy" ng-hide="data.margin">
+     Possible artbitrage strategy: None found.
+  </div>
   <div class="footer">All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees.</div>
+  <div class="footer">For example, if the best ask (buying price) is 703, the index is at 700 and the fee 0.2%, then buy percent is calculated as <i>(703 * (100+0.2)/100 - 700) / 700 * 100% = 0.63%</i></div>
+  <div class="footer">*MM stands for market maker's price; the percent is valid for buying at bid or selling at ask.</div>
   <div class="footer">This application is written using Node.js and AngularJS.</div>
   <div class="footer">Published at <a href='http://exmont-lbror.rhcloud.com'>http://exmont-lbror.rhcloud.com</a>.</div>
   <div class="footer">Author: Maksim Shevchenko <a href='http://github.com/electromax/exmont'>Github</a></div>

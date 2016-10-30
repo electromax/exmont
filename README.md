@@ -8,6 +8,8 @@ This project's idea is to provide a live tool to compare exchanges' bid/ask (=bu
 
 Obviously, the "fairness" concept is a subjective one. Exmont uses [a weighted average of exchange prices](https://kaiko.com/) to get the Bitcoin price index which all prices are compared to.
 
+We can also go further and see how much we can win if Bitcoin is purchased at the lowest market and sold on the highest one right now. We should warn, however, that such strategy has some risk involved, because it is difficult to perform two operations at the same time, and each exchange market has its own rules about moving funds.
+
 ## Demo
 http://exmont-lbror.rhcloud.com/
 
@@ -23,4 +25,4 @@ http://exmont-lbror.rhcloud.com/
 ## Planned exchanges to support:
 * http://kraken.com/
 * http://coinbase.com/
-
+* http://gemini.com/

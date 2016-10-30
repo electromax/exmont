@@ -117,3 +117,11 @@ td:last-child {
 .green {
    color: green;
 }
+
+.strategy {
+    background-color: lightgoldenrodyellow;
+    border: 1px blue solid;
+    border-radius: 9px;
+    padding: 20px;
+    margin: 7px 1px;
+}
