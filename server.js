@@ -2,7 +2,7 @@
  //  OpenShift sample Node application
 var express = require('express');
 var fs = require('fs');
-var kaiko = require('./kaiko');
+var xbx = require('./xbx');
 var btce = require('./btce');
 var quadriga = require('./quadriga');
 var finex = require('./finex');
@@ -114,7 +114,7 @@ var SampleApp = function() {
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
                 markets: [self.finex, self.btce, self.okc, self.itbit, self.stamp, self.quadriga, self.quoine],
-                idx: self.kaiko.idx
+                idx: self.xbx.idx
             }));
         };
 
@@ -168,7 +168,7 @@ var SampleApp = function() {
         self.itbit = new itbit();
         self.stamp = new stamp();
         self.quoine = new quoine();
-        self.kaiko = new kaiko([self.btce, self.quadriga, self.finex, self.itbit, self.stamp, self.okc, self.quoine]);
+        self.xbx = new xbx([self.btce, self.quadriga, self.finex, self.itbit, self.stamp, self.okc, self.quoine]);
     };
 
 }; /*  Sample Application.  */
